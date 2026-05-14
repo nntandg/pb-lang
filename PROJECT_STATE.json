@@ -1,6 +1,6 @@
 {
   "project_name": "PB 编程语言（原 ZHPY）",
-  "current_phase": "PB v0.3.1：.pb 后缀、全量回归、发布包构建完成，准备 GitHub 发布",
+  "current_phase": "PB v0.3.1：GitHub 仓库与 Release 已发布，PyPI 等待 token",
   "progress_percentage": 100,
   "total_phases": 5,
   "package_version": "0.3.1",
@@ -133,12 +133,10 @@
     "tests/test_more_stdlib.zhpy",
     "tests/test_pb_extension.pb"
   ],
-  "last_updated": "2026-05-14 23:02:00",
+  "last_updated": "2026-05-14 23:15:00",
   "next_actions": [
-    "完成 .pb 后缀兼容本地 git commit",
-    "创建/推送 GitHub 远程仓库",
-    "创建 GitHub Release v0.3.1 并上传 dist 产物",
-    "如提供 PyPI token，可发布到 PyPI"
+    "如提供 PyPI token，可发布 pb-lang 0.3.1 到 PyPI",
+    "可选：后续同步本地 git remote 与 GitHub API 上传的远程 commit 历史"
   ],
   "files_modified": [
     "PROJECT_STATE.json",
@@ -175,6 +173,13 @@
     "2026-05-14：.pb 后缀已正式纳入测试与文档，旧 .zhpy 后缀保留兼容。",
     "2026-05-14：PB 版本更新为 0.3.1，发布前需重新构建 dist。",
     "2026-05-14：PB 0.3.1 全量回归通过，包含 tests/test_pb_extension.pb。",
-    "2026-05-14：dist 已清理旧 0.3.0，仅保留 pb-lang 0.3.1 的 wheel 和 sdist；wheel 元数据已验证包含 pb/zhpy 入口。"
-  ]
+    "2026-05-14：dist 已清理旧 0.3.0，仅保留 pb-lang 0.3.1 的 wheel 和 sdist；wheel 元数据已验证包含 pb/zhpy 入口。",
+    "2026-05-14：已创建 GitHub 仓库 https://github.com/nntandg/pb-lang，并发布 Release v0.3.1。",
+    "2026-05-14：GitHub Release v0.3.1 已上传 pb_lang-0.3.1-py3-none-any.whl 与 pb-lang-0.3.1.tar.gz。"
+  ],
+  "github": {
+    "repository": "https://github.com/nntandg/pb-lang",
+    "release": "https://github.com/nntandg/pb-lang/releases/tag/v0.3.1",
+    "version": "v0.3.1"
+  }
 }
