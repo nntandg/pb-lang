@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# Local debug scratch files
+debug_*.py
+test_debug.py
+
+# Local backups
+backups/

@@ -1,0 +1,180 @@
+{
+  "project_name": "PB 编程语言（原 ZHPY）",
+  "current_phase": "PB v0.3.1：.pb 后缀、全量回归、发布包构建完成，准备 GitHub 发布",
+  "progress_percentage": 100,
+  "total_phases": 5,
+  "package_version": "0.3.1",
+  "phase_details": {
+    "phase_1": {
+      "name": "基础语法支持",
+      "status": "completed",
+      "completion_date": "2026-05-11"
+    },
+    "phase_2": {
+      "name": "控制流程",
+      "status": "completed",
+      "completion_date": "2026-05-11"
+    },
+    "phase_3": {
+      "name": "数据结构",
+      "status": "completed",
+      "completion_date": "2026-05-11"
+    },
+    "phase_4": {
+      "name": "文件操作 + 异常类",
+      "status": "completed",
+      "completion_date": "2026-05-11",
+      "test_count": 17,
+      "passing_tests": 17
+    },
+    "phase_5": {
+      "name": "面向对象高级特性 + 生成器",
+      "status": "completed",
+      "completion_date": "2026-05-13",
+      "current_progress": "100%",
+      "completed_items": [
+        "添加 Phase 5 关键词映射",
+        "实现/修复类定义与方法定义简写",
+        "支持属性/类方法/静态方法中文装饰器分组",
+        "修复 setter 简写自动参数：设置xxx(self, 值)",
+        "支持 staticmethod 加/乘 简写参数 a, b",
+        "支持 yield 与 yield from",
+        "支持 fib.下一个() / obj.next() 转换为 next(obj)",
+        "支持生成器方法在 for/yield from 中省略括号的简写",
+        "修正 Phase 5 测试样例中的 classmethod 与生成器实例化语义",
+        "完成 Phase 1-5 回归测试"
+      ]
+    },
+    "extensions": {
+      "name": "文档、边缘测试、Enum、CLI 打包",
+      "status": "completed",
+      "completion_date": "2026-05-13",
+      "completed_items": [
+        "新增 README.md 使用文档与语法参考",
+        "新增 tests/test_enum.zhpy 枚举类测试",
+        "新增 tests/test_edge_cases.zhpy 边缘回归测试",
+        "实现 枚举类 语法：枚举类 名称: → class 名称(ZHEnum):",
+        "实现 ZHEnum，支持 .名称/.名字/.值 中文枚举属性",
+        "支持英文一元负号/正号/取反：-x、+x、~x",
+        "修复属性解析停止词，避免 则/那么/执行 被并入属性名",
+        "修复 .加/.乘 中文方法名解析，同时避免 数学.pi 乘 r 回归",
+        "新增 pyproject.toml 与 setup.py，提供 zhpy 命令行入口",
+        "验证 python3 -m pip install . 后 zhpy 命令可用"
+      ]
+    },
+    "stdlib_extensions": {
+      "name": "标准库扩展：路径、集合工具、CSV、哈希",
+      "status": "completed",
+      "completion_date": "2026-05-14",
+      "completed_items": [
+        "新增 stdlib/集合工具.py，封装 collections：计数器、双端队列等",
+        "新增 stdlib/CSV模块.py，封装 csv：读取器、写入器、字典读取器等",
+        "新增 stdlib/哈希.py，封装 hashlib：SHA256文本、MD5文本、摘要等",
+        "完善 stdlib/路径.py，新增 中文路径 子类，支持 .名称/.后缀/.父目录 等中文属性",
+        "更新 MODULE_NAME_MAP 与 _inject_chinese_modules 预加载列表",
+        "修复 哈希 作为模块名时与内置 hash 别名冲突",
+        "修复 .追加() 被词法器拆成 追 + 加 的属性解析问题，同时避免 数学.pi 乘 r 回归",
+        "新增中文字符串方法兼容：.分割行()/.分割()/.替换()/.去空白()"
+      ]
+    },
+    "property_setter_and_more_stdlib": {
+      "name": "原生 property.setter 与更多标准库扩展",
+      "status": "completed",
+      "completion_date": "2026-05-14",
+      "completed_items": [
+        "新增 tests/test_property_setter.zhpy，验证 @property 与 @属性.setter 原生写法",
+        "支持 @property、@xxx.setter、@classmethod、@staticmethod 等原生装饰器行解析",
+        "修复 捕获 值错误: 与 抛出 值错误(...) 的异常翻译兼容",
+        "新增 stdlib/字符串模块.py，封装 string 常量、模板与格式化器",
+        "新增 stdlib/拷贝.py，封装 copy：浅拷贝、深拷贝、错误",
+        "新增 stdlib/类型提示.py，封装 typing 常用类型别名",
+        "新增 tests/test_more_stdlib.zhpy，验证字符串模块、拷贝、类型提示可用"
+      ]
+    },
+    "pb_rename_startup_readme": {
+      "name": "项目语言名改为 PB、启动页与小白友好 README",
+      "status": "completed",
+      "completion_date": "2026-05-14",
+      "completed_items": [
+        "第5项全量回归测试已通过：Phase1-5、Enum、边缘测试、标准库扩展、property.setter、更多标准库",
+        "项目语言展示名从 ZHPY/CHPY 统一改为 PB（保留 zhpy.py 与 zhpy 命令兼容旧用法）",
+        "新增 PB_VERSION、PB_AUTHOR、PB_ASCII_ART 与启动页",
+        "交互模式提示符改为 PB >>>，支持 help/帮助、退出/exit/quit",
+        "新增 --version 与 --help 输出",
+        "pyproject.toml 包名更新为 pb-lang，版本更新为 0.3.0，新增 pb 命令并保留 zhpy 命令",
+        "README.md 全面重写为小白友好教程，列举所有主要语法和标准库用法"
+      ]
+    },
+    "pb_extension_migration": {
+      "name": "PB 文件后缀迁移：推荐 .pb，兼容 .zhpy",
+      "status": "completed",
+      "completion_date": "2026-05-14",
+      "completed_items": [
+        "新增 tests/test_pb_extension.pb，验证 .pb 文件可直接通过 python3 zhpy.py 运行",
+        "确认旧 .zhpy 文件仍保持兼容，无需立即迁移",
+        "CLI 帮助文本明确推荐 .pb 后缀，并说明 .zhpy 为历史兼容后缀",
+        "README 增加 .pb 推荐后缀、.zhpy 兼容说明和迁移命令",
+        "版本号更新为 PB 0.3.1 / pb-lang 0.3.1"
+      ]
+    }
+  },
+  "tests_verified": [
+    "tests/test_phase1.zhpy",
+    "tests/test_phase2.zhpy",
+    "tests/test_phase3.zhpy",
+    "tests/test_phase4.zhpy",
+    "tests/test_phase5_basic.zhpy",
+    "tests/test_phase5_simple.zhpy",
+    "tests/test_phase5.zhpy",
+    "tests/test_enum.zhpy",
+    "tests/test_edge_cases.zhpy",
+    "tests/test_stdlib_extensions.zhpy",
+    "tests/test_property_setter.zhpy",
+    "tests/test_more_stdlib.zhpy",
+    "tests/test_pb_extension.pb"
+  ],
+  "last_updated": "2026-05-14 23:02:00",
+  "next_actions": [
+    "完成 .pb 后缀兼容本地 git commit",
+    "创建/推送 GitHub 远程仓库",
+    "创建 GitHub Release v0.3.1 并上传 dist 产物",
+    "如提供 PyPI token，可发布到 PyPI"
+  ],
+  "files_modified": [
+    "PROJECT_STATE.json",
+    "README.md",
+    "pyproject.toml",
+    "setup.py",
+    "stdlib/CSV模块.py",
+    "stdlib/哈希.py",
+    "stdlib/路径.py",
+    "stdlib/集合工具.py",
+    "tests/test_edge_cases.zhpy",
+    "tests/test_enum.zhpy",
+    "tests/test_phase5.zhpy",
+    "tests/test_stdlib_extensions.zhpy",
+    "zhpy.py",
+    "stdlib/字符串模块.py",
+    "stdlib/拷贝.py",
+    "stdlib/类型提示.py",
+    "tests/test_property_setter.zhpy",
+    "tests/test_more_stdlib.zhpy",
+    "dist/pb_lang-0.3.0-py3-none-any.whl",
+    "dist/pb-lang-0.3.0.tar.gz",
+    "pb_lang.egg-info/entry_points.txt",
+    "tests/test_pb_extension.pb"
+  ],
+  "notes": [
+    "当前环境 python3 -m pip install -e . 因 conda/pip editable build 子进程缺少 pip 而失败；普通安装 python3 -m pip install . 已验证成功。",
+    "2026-05-14：标准库扩展测试与 Phase1-5/Enum/边缘测试全量回归均已通过。",
+    "2026-05-14：README.md 与 PROJECT_STATE.json 已补充 property.setter、字符串模块、拷贝、类型提示扩展状态。",
+    "2026-05-14：第5项全量回归测试已通过，包含 tests/test_property_setter.zhpy 与 tests/test_more_stdlib.zhpy。",
+    "2026-05-14：语言展示名改为 PB，新增 PengBooo ASCII 启动页；README 已按小白友好、完整语法清单、美化布局要求重写。",
+    "2026-05-14：已使用 setup.py sdist bdist_wheel 替代 python3 -m build，成功构建 dist/pb_lang-0.3.0-py3-none-any.whl 与 dist/pb-lang-0.3.0.tar.gz。",
+    "2026-05-14：已验证 wheel 安装后的 pb --version 与 zhpy -c 命令入口正常。",
+    "2026-05-14：.pb 后缀已正式纳入测试与文档，旧 .zhpy 后缀保留兼容。",
+    "2026-05-14：PB 版本更新为 0.3.1，发布前需重新构建 dist。",
+    "2026-05-14：PB 0.3.1 全量回归通过，包含 tests/test_pb_extension.pb。",
+    "2026-05-14：dist 已清理旧 0.3.0，仅保留 pb-lang 0.3.1 的 wheel 和 sdist；wheel 元数据已验证包含 pb/zhpy 入口。"
+  ]
+}

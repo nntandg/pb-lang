@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pb-lang"
+version = "0.3.1"
+description = "PB 编程语言：面向中文初学者的 Python 友好中文语法解释器"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+  {name = "PengBooo / Pengbo"}
+]
+keywords = ["python", "chinese", "interpreter", "education", "pb", "pengbo"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Education",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Natural Language :: Chinese (Simplified)",
+]
+
+dependencies = []
+
+[project.scripts]
+pb = "zhpy:main"
+zhpy = "zhpy:main"  # 兼容旧命令
+
+[tool.setuptools]
+py-modules = ["zhpy"]
+include-package-data = true
+
+[tool.setuptools.data-files]
+"share/pb/stdlib" = [
+  "stdlib/*.py"
+]
